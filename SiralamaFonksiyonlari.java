@@ -1,20 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package javaapplication1;
+package BEO;
 
 /**
  *
- * @author buketecrin
+ * @author buketecrinozturk
  */
 public class SiralamaFonksiyonlari {
     //int dizi[]={25,69,58,2,32,1,7,17,0};
     //-----------------------bouble sort----------------------------------------
 public int[] boubleSort(int dizi[],int n){
         System.out.println("*****boublesort*******");
-        // her geçişte sadece bir sırlama yapacak
+        // her geçişte sadece bir sıralama yapacak
         int yedek;
         for(int i=0; i<n; i++)
         {
@@ -45,8 +40,9 @@ for(i=1; i<n; i++){
     dizi[j]=yedek;
 }
 return dizi;
-}
-  
+}    
+   //-----------------------selection sort-------------------------------------
+
 public int[] selectionSort(int dizi[],int n){
 
     int i,j,minIndex,yedek=0;
@@ -104,7 +100,6 @@ void merge(int dizi[], int left, int m, int right)
             k++;
         }
  
-        /* Copy remaining elements of L[] if any */
         while (i < n1)
         {
             dizi[k] = L[i];
@@ -112,7 +107,6 @@ void merge(int dizi[], int left, int m, int right)
             k++;
         }
  
-        /* Copy remaining elements of R[] if any */
         while (j < n2)
         {
             dizi[k] = R[j];
@@ -164,11 +158,8 @@ int partition(int arr[], int low, int high)
     {
         if (low < high)
         {
-            /* pi is partitioning index, arr[pi] is 
-              now at right place */
+           
             int pi = partition(dizi, low, high);
-             // Recursively sort elements before
-            // partition and after partition
             sort_quick(dizi, low, pi-1);
             sort_quick(dizi, pi+1, high);
         }
